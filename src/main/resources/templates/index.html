@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>F-Chat</title>
+    <meta name="description" content="Cabe - Responsive Multi-purpose HTML5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- STYLESHEETS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" href="/css/themify-icons.css">
+
+    <link rel="stylesheet" href="/css/main.min.css" type="text/css" media="all">
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+		.open{
+			background-color: #ebeff4;
+		}
+        .clearfix:after {
+            content: " ";
+            display: block;
+            clear: both;
+            height: 0;
+        }
+
+        .main-wrapper .right-content .left-sidebar .sidebar .form-content {
+            position: relative;
+        }
+
+        .main-wrapper .right-content .left-sidebar .sidebar .form-content .c {
+            position: absolute;
+            height: 100%;
+            width: 50px;
+            right: 0;
+            top: 16px;
+            opacity: 0;
+        }
+
+        .c_item{
+            position: relative;
+        }
+
+        .c_item>img{
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right:0;
+            top:0;
+            z-index: 99;
+        }
+        /*.chat-footer input{*/
+        /*    color: #000;*/
+        /*}*/
+        /*.unread-count{*/
+        /*    width: 15px;*/
+        /*    height: 15px;*/
+        /*}*/
+        /*#s{*/
+        /*    overflow: auto;*/
+        /*}*/
+    </style>
+</head>
+
+<body>
+
+<!-- page tour modal -->
+
+<div class="modal fade show" id="pagetour" style="padding-left: 0">
+    <div class="modal-dialog modal-lg modal-md modal-dialog-centered modal-dialog-zoom">
+        <div class="modal-content text-center" style="background-image: url(/images/bg-2.png);">
+            <div class="owl-carousel owl-theme slider-1">
+                <div class="item">
+                    <img src="/images/navigation1.jpg" style="margin-bottom: 25px" alt="modal">
+<!--                    <h4 class="text-primary">Would you like to take a short page tour?</h4>-->
+                    <button type="button" class="btn btn-link tour-close-btn" data-dismiss="modal" aria-label="Close">
+                        跳过教程
+                    </button>
+                    <button type="button" class="btn btn-primary start-tour">下一张</button>
+
+                </div>
+                <div class="item">
+                    <img src="/images/navigation2.jpg" style="margin-bottom: 50px" alt="modal">
+                    <button type="button" class="btn btn-link tour-close-btn" data-dismiss="modal" aria-label="Close">
+                        跳过教程
+                    </button>
+                    <button type="button" class="btn btn-primary start-tour">下一张</button>
+                </div>
+                <div class="item">
+                    <img src="/images/navigation3.jpg"  style="margin-bottom: 85px" alt="modal">
+                    <button type="button" class="btn btn-primary start-tour tour-close-btn">结束</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page tour modal -->
+<!-- add friend modal -->
+<div class="modal fade show" id="addfriend">
+    <div class="modal-dialog modal-md modal-md modal-dialog-centered modal-dialog-zoom">
+        <div class="modal-content pb-0 d-flex justify-content-between text-center">
+            <div class="modal-content pb-0">
+                <div class="modal-header add-friend">
+                    <h5 class="modal-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-user-plus mr-2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        添加好友
+                    </h5>
+                    <button type="button" class="close" data-dismiss="addfriend" aria-label="close"
+                            id="addfriend-close">
+                        <i class="ti-close text-white"></i>
+                    </button>
+                </div>
+                <div class="modal-body add-friend pl-4 pr-4">
+                    <div class="alert alert-info text-left">请填写相关信息</div>
+                    <form id="req_form">
+                        <input type="hidden" value="" id="from_id" name="fromId">
+                        <input type="hidden" value="" id="to_id" name="toId">
+                        <input type="hidden" value="1" name="type">
+                        <input type="hidden" value="0" name="status">
+                        <input type="hidden" value="0" name="isPush">
+                        <div class="form-group text-left">
+                            <label for="otherMsg" class="col-form-label">给好友的备注</label>
+                            <input type="text" class="form-control" id="otherMsg" name="otherMsg">
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="content" class="col-form-label">验证消息</label>
+                            <textarea class="form-control" id="content" placeholder="我是..." name="content"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer add-friend">
+                    <button type="button" class="btn btn-primary" id="req_form_send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- add friend modal -->
+<!-- add friend modal2 -->
+<div class="modal fade show" id="addfriend2">
+    <div class="modal-dialog modal-md modal-md modal-dialog-centered modal-dialog-zoom">
+        <div class="modal-content pb-0 d-flex justify-content-between text-center">
+            <div class="modal-content pb-0">
+                <div class="modal-header add-friend">
+                    <h5 class="modal-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-user-plus mr-2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        好友申请
+                    </h5>
+                    <button type="button" class="close" data-dismiss="addfriend" aria-label="close"
+                            id="addfriend-close2">
+                        <i class="ti-close text-white"></i>
+                    </button>
+                </div>
+                <div class="modal-body add-friend pl-4 pr-4">
+                    <div class="alert alert-info text-left" id="friend_name"></div>
+                    <div class="alert alert-info text-left" id="friend_phone"></div>
+
+                    <div class="form-group text-left">
+                        <label for="friend_remark" class="col-form-label">给好友的备注</label>
+                        <input type="text" class="form-control" id="friend_remark" placeholder="可以不填...">
+                    </div>
+                    <input type="hidden" id="rid">
+                    <input type="hidden" id="tid">
+                </div>
+                <div class="modal-footer add-friend">
+                    <button type="button" class="btn btn-success acc">通过</button>
+                    <button type="button" class="btn btn-danger rej">拒绝</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- add friend modal2 -->
+<!-- video call modal -->
+<div class="modal fade show" id="videocall">
+    <div class="modal-dialog modal-lg modal-md modal-dialog-centered modal-dialog-zoom">
+        <div class="modal-content pb-0 d-flex justify-content-between text-center bgi-center"
+             style="background-image: url(images/video.jpg); min-height: 500px;">
+            <div class="modal-header">
+                <a href="#" class="live">LIVE</a>
+                <a href="#" class="icon-full"><i class="ti-fullscreen"></i></a>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a href="#" class="icon-bttn bg-danger" id="video-close"><i class="ti-close text-white"></i></a>
+                <a href="#" class="icon-bttn bg-success"><i class="ti-check text-white"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- video call modal -->
+
+
+<!-- main wrapper -->
+<div class="main-wrapper">
+    <!-- navigation -->
+    <nav class="navigation">
+        <div class="container pl-0 pr-0">
+            <div class="nav-content">
+                <ul>
+                    <li class="logo d-none d-xl-block d-lg-block"><a href="#"><img src="/images/logo.png"
+                                                                                   alt="logo"></a></li>
+                    <li><a href="#" class="active nav-content-bttn" data-tab="chats" id="cc"><span
+                            class="circle-icon bg-warning"></span><i class="ti-comments"></i></a></li>
+                    <li><a href="#" class="nav-content-bttn" data-tab="friends" id="fa">
+<!--                        <span class="circle-icon bg-danger"></span>-->
+                        <i class="ti-user"></i></a></li>
+<!--                    <li><a href="#" class="nav-content-bttn" data-tab="favorites"><i class="ti-heart"></i></a></li>-->
+<!--                    <li class="flex-lg-brackets"><a href="#" data-tab="archived" class="nav-content-bttn"><i-->
+<!--                            class="ti-archive"></i></a></li>-->
+
+<!--                    <li class="d-none d-xl-block d-lg-block night-mode"><a href="#"><i class="ti-flickr-alt"></i></a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navigation -->
+    <div class="right-content" style="z-index: 100">
+        <div class="left-sidebar">
+
+            <div class="chat-header">
+                <div class="chat-header-user">
+                    <figure class="avatar">
+                       <img src="/images/user-7.png" class="myAva rounded-circle canShow" alt="image">
+                        <input type="hidden" value="">
+
+                    </figure>
+                    <div id="me">
+                        <h5 class="mt-0 mb-0" style="display: inline-block">James
+                            Henry</h5>&nbsp;&nbsp;&nbsp;&nbsp;<span id="status"
+                                                                    style="color:#2f80ec;font-size: 10px"></span> <br>
+                        <small class="text-success">james43@gmail.com</small>
+                    </div>
+                </div>
+                <div class="chat-header-action nav-content">
+                    <ul class="list-inline mb-1 mt-3">
+<!--                        <li class="list-inline-item mr-3"><a href="login.html"><i class="ti-lock"></i></a></li>-->
+                        <li class="list-inline-item mr-3"><a href="#" class="nav-content-bttn" data-tab="settings"><i
+                                class="ti-settings"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="nav-content-bttn" data-tab="notification"><span
+                                class="circle-icon bg-warning" id="req-warning"></span><i class="ti-bell"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar active" id="chats">
+
+                <div class="text-left mb-2 mt-3"><h2 class="title-text" style="display: inline-block"><b>交友</b>广场</h2>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="javascript:void(0)" onclick="showThree()" class="cg"><i class="ti-back-right"></i> 换一批</a><a
+                        href="javascript:void(0)" class="bk"><i class="ti-back-right"></i> 返回</a></div>
+                <div class="row pl-2 pr-2" style="max-width:450px;">
+                    <div class="owl-carousel owl-theme slider-0" id="make_friends">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <form action="#" class="mb-3 mt-3">
+                        <input type="text" class="form-control" id="phone_number" placeholder="输入手机号查找朋友">
+                    </form>
+                    <div class="c"></div>
+                </div>
+                <div class="text-left mb-1 mt-0"><h2 class="title-text"><b>会话</b> 室</h2></div>
+                <div class="chat-list-content" id="clc">
+                    <ul class="chat-list" id="chat_list">
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-2.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Hurin Seary</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <div class="message-count bg-primary">3</div>-->
+                        <!--	                                    <small class="text-primary">03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-6.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Victor Exrixon</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <div class="message-count bg-primary">3</div>-->
+                        <!--	                                    <small class="text-primary">03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-5.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Surfiya Zakir</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <div class="message-count bg-primary">1</div>-->
+                        <!--	                                    <small class="text-primary">Yesterday</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-8.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">John Ive</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-9.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Goria Coast</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+                        <!--	                		</li>-->
+
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-3.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">John Ive</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-2.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Goria Coast</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-8.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">John Ive</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-9.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Goria Coast</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+                        <!--	                		</li>-->
+
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-3.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">John Ive</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+
+                        <!--	                		</li>-->
+                        <!--	                		<li class="chat-list-item">-->
+                        <!--	                			<figure class="avatar user-online">-->
+                        <!--	                                <img src="/images/user-2.png" alt="image">-->
+                        <!--	                            </figure>-->
+                        <!--	                            <div class="list-body">-->
+                        <!--	                            	<div class="chat-bttn">-->
+                        <!--	                                    <h3 class="mb-0 mt-2">Goria Coast</h3>-->
+                        <!--	                                    <p>What's up, how are you?</p>-->
+                        <!--	                                </div>-->
+                        <!--	                                <div class="list-action mt-2 text-right">-->
+                        <!--	                                    <small>03:41 PM</small>-->
+                        <!--	                                </div>-->
+                        <!--	                            </div>-->
+                        <!--	                		</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar" id="friends">
+                <div class="text-left mb-2 mt-3"><h2 class="title-text"><b>好友</b> 列表 </h2></div>
+                <div class="form-content">
+                    <form action="#" class="mb-3 mt-1">
+                        <input type="text" class="form-control" placeholder="此搜索框暂不可用(●'◡'●)">
+                    </form>
+                </div>
+                <div class="chat-list-content" id="fl">
+                    <ul class="chat-list" id="friend_list">
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar" id="favorites">
+                <div class="text-left mb-2 mt-3"><h2 class="title-text"><b>Favorites</b> Room </h2></div>
+                <div class="form-content">
+                    <form action="#" class="mb-3 mt-1">
+                        <input type="text" class="form-control" placeholder="Type name to find contact">
+                    </form>
+                </div>
+                <div class="chat-list-content">
+                    <ul class="chat-list">
+                        <li class="chat-list-item">
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-0 mt-2">Hurin Seary</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-0 mt-2">Victor Exrixon</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-0 mt-2">Surfiya Zakir</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-0 mt-2">John Ive</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-0 mt-2">Goria Coast</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar" id="archived">
+                <div class="text-left mb-2 mt-3"><h2 class="title-text"><b>Archived</b> Room </h2></div>
+                <div class="form-content">
+                    <form action="#" class="mb-3 mt-1">
+                        <input type="text" class="form-control" placeholder="Seacrh archived..">
+                    </form>
+                </div>
+                <div class="chat-list-content">
+                    <ul class="chat-list">
+                        <li class="chat-list-item">
+                            <figure class="avatar user-online">
+                                <span class="avatar-title bg-primary rounded-circle">M</span>
+                            </figure>
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-1 mt-1">Hurin Seary</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <small>03:41 PM</small>
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <figure class="avatar user-online">
+                                <span class="avatar-title bg-danger rounded-circle">R</span>
+                            </figure>
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-1 mt-1">Victor Exrixon</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <small>03:41 PM</small>
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="chat-list-item">
+                            <figure class="avatar user-online">
+                                <span class="avatar-title bg-success rounded-circle">M</span>
+                            </figure>
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-1 mt-1">Surfiya Zakir</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <small>Yesterday</small>
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="chat-list-item">
+                            <figure class="avatar user-online">
+                                <span class="avatar-title bg-warning rounded-circle">A</span>
+                            </figure>
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-1 mt-1">John Ive</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <small>03:41 PM</small>
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list-item">
+                            <figure class="avatar user-online">
+                                <span class="avatar-title bg-info rounded-circle">D</span>
+                            </figure>
+                            <div class="list-body">
+                                <div class="chat-bttn">
+                                    <h3 class="mb-1 mt-1">Goria Coast</h3>
+                                    <p>What's up, how are you?</p>
+                                </div>
+                                <div class="list-action mt-2 text-right">
+                                    <small>03:41 PM</small>
+                                    <div class="dropdown">
+                                        <a href="#" class="more dropdown-toggle" data-toggle="dropdown"><i
+                                                class="ti-more-alt"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item">Open</a>
+                                            <a href="#" class="dropdown-item">Restore</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar" id="notification">
+                <div class="text-left mb-2 mt-3"><h2 class="title-text"><b>好友申请</b></h2></div>
+                <div class="form-content">
+                    <form action="#" class="mb-3 mt-1">
+                        <input type="text" class="form-control" placeholder="这个搜索框暂不可用(●'◡'●)">
+                    </form>
+                </div>
+                <div class="chat-list-content" id="rl">
+                    <ul class="chat-list" id="apply_list">
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar" id="settings">
+                <div class="text-left mb-2 mt-3"><h2 class="title-text"><b>账户</b> 设置 </h2></div>
+                <div class="chat-list-content mb-3 mt-3" id="sb" style="-webkit-overflow-scrolling:touch;overflow: auto;">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title"><a id="info-toggle" role="button" data-toggle="collapse"
+                                                           data-parent="#accordion" href="#collapseOne"
+                                                           aria-expanded="true" aria-controls="collapseOne"
+                                                           class="collapsed">个人信息<span>在这里编辑个人信息</span></a></h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <form action="javascript:void (0)" class="mb-3 mt-3" id="account_info">
+                                        <input type="hidden" name="id" id="myId">
+                                        &nbsp;&nbsp;&nbsp;<label for="">昵称</label>
+                                        <input type="text" class="form-control mb-3" name="username">
+                                        &nbsp;&nbsp;&nbsp;<label for="">性别</label><br>
+                                        <select name="sex" id="" class="form-control mb-3" style="text-align: center">
+                                            <option value="0" name="male">男</option>
+                                            <option value="1" name="female">女</option>
+                                            <option value="2" name="unknow">未知</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;<label for="">城市</label>
+                                        <input type="text" class="form-control mb-3" name="city">
+                                        &nbsp;&nbsp;&nbsp;<label for="">个人简介</label>
+                                        <textarea name="describex" id="bio" cols="30" rows="4" class="mb-3"></textarea>
+                                        <button>保存</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title"><a id="img-toggle" role="button" data-toggle="collapse"
+                                                           data-parent="#accordion" href="#collapseTwo"
+                                                           aria-expanded="true" aria-controls="collapseTwo"
+                                                           class="collapsed">头像设置<span>在这里编辑上传你的头像</span></a></h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <form action="javascript:void(0)" id="myFace" class="mb-3 mt-3">
+                                        <input type="file" name="file1" id="f1"
+                                               onchange="validateImgB(this);setTimeout(showimg(1),500)">
+                                        <div style="margin-top: 20px;margin-bottom: 20px" class="clearfix"><br><img id="i1" src="" alt="" class="" style="display: block;width: 100px;height: 100px" >
+                                        </div>
+                                        <button>上传头像</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title"><a role="button" id="phone-toggle" data-toggle="collapse"
+                                                           data-parent="#accordion" href="#collapseThree"
+                                                           aria-expanded="true" aria-controls="collapseThree"
+                                                           class="collapsed">号码换绑 <span>在这里更改你所绑定的手机</span></a></h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <form class="mes_in" action="javascript:void(0)">
+                                        <div class="input-group mb-3">
+                                            <!--								<i class="ti-phone"></i>-->
+                                            <input class="form-control form-control-lg" id="phone" type="text"
+                                                   name="number" placeholder="在此输入您的手机号">
+                                            <button class="btn-warning sendVerifyCode" type="button">发送验证码</button>
+                                        </div>
+                                        <div class="row" hidden>
+                                            <label>模板ID:</label><input name="templateId" value="5211">
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <!--			              		<i class="ti-lock"></i>-->
+                                            <input class="form-control form-control-lg" id="password" name="verifyCode"
+                                                   type="text" placeholder="在此输入您的验证码" required="">
+                                        </div>
+                                        <!--			              	<a class="link-primary" href="forgot-password.html">Forgot password?</a>-->
+                                        <button class="btn btn-block btn-lg btn-primary update-phone-btn" type="submit"
+                                                style="margin-top: 40px">上传
+                                        </button>
+                                        <!--			              	<p class="mt-4 text-center">Don't have account? <a class="link-primary" href="register.html">Sign Up</a>.</p>-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                           href="#collapseFour" aria-expanded="true"
+                                                           aria-controls="collapseFour" class="collapsed">个人隐私 <span>在这里设置隐私相关权限</span></a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <div class="switch-box">
+                                        <h4>允许被发现和添加</h4>
+                                        <label class="switch float-right mb-0" for="checkbox1">
+                                            <input type="checkbox" id="checkbox1"/>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                           <button class="btn-danger btn-block" id="quit_btn">退出登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-content" style="z-index: 100">
+            <!-- chat header -->
+            <div class="chat-header">
+                <div class="chat-header-user">
+                    <figure class="avatar" id="a">
+                        <img src="images/add.png" class="rounded-circle" alt="image" style="width:60px;height: 60px">
+                        <input type="hidden" value="">
+                    </figure>
+                    <div>
+                        <h5 class="mt-2 mb-0">暂无会话</h5>
+                        <small class="text-success">点击加号选择好友发起会话</small>
+                    </div>
+                </div>
+                <div class="chat-header-action">
+                    <ul class="list-inline mb-0 mt-2">
+                        <li class="list-inline-item d-xl-none d-lg-none"><a href="#" class="bttn-box-round back-chat-div"><i class="ti-arrow-left"></i></a></li>
+                        <li class="list-inline-item" id="images"><a href="#" class="bttn-box-round"><i class="ti-image"></i></a></li>
+                        <li class="list-inline-item" id="files"><a href="#" class="bttn-box-round"><i class="ti-files"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- chat header -->
+            <!-- chat body -->
+            <div class="chat-body" id="chat-body" style="overflow: hidden;outline: none;-webkit-overflow-scrolling:touch;">
+                <div class="messages-content" id="messages-content">
+
+                </div>
+            </div>
+            <!-- chat body -->
+            <!-- chat footer -->
+            <div class="chat-footer">
+                <form action="javascript:void(0)">
+                    <input type="text" placeholder="在此输入信息">
+                    <button disabled><img src="/images/send.png" alt="send"></button>
+                </form>
+            </div>
+            <input type="hidden" id="tid_c">
+            <!-- chat footer -->
+        </div>
+<!--<div style="-webkit-overflow-scrolling:touch;overflow:scroll;height: 100%">-->
+    <div class="right-sidebar" style="overflow: hidden;outline: none;z-index: 101;">
+        <div class="profile-content scroll-profile" id="s" style="-webkit-overflow-scrolling:touch;overflow: auto;" >
+            <header>
+                <h2 class="title-text">个人信息</h2>
+                <a href="#" class="close-icon float-right"><i class="ti-close  text-danger"></i></a>
+            </header>
+            <div class="text-center mt-4" id="me2">
+                <figure class="avatar avatar-xl mb-4">
+                    <img src="/images/user-10.png" class="myAva rounded-circle" style="width: 200px;height: 300px" alt="image">
+
+                </figure>
+                <h5 class="mb-0">James Henry</h5>
+                <small class="text-success">james43@gmail.com</small>
+                <ul class="profile-detail list-inline pt-5">
+                    <li class="list-block-item text-left">
+                        <h6 class="mb-0">电话</h6>
+                        <small id="myPhone"></small>
+                    </li>
+                    <li class="list-block-item text-left">
+                        <h6 class="mb-0">性别</h6>
+                        <small id="mySex"></small>
+                    </li>
+                    <li class="list-block-item text-left">
+                        <h6 class="mb-0">城市</h6>
+                        <small id="myCity"></small>
+
+                    </li>
+                    <li class="list-block-item text-left">
+                        <h6 class="mb-0">个性签名</h6>
+                        <small id="myDescribe"></small>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+<!--</div>-->
+
+    </div>
+    <form action="javascript:void(0)" enctype="multipart/form-data" method="post" id="ph-up">
+        <input type="file" onchange="validateImg(this);" id="image" name="image" hidden>
+    </form>
+    <form action="javascript:void(0)" enctype="multipart/form-data" method="post" id="fl-up">
+        <input type="file" id="file" onchange="validateFile(this);" name="file" hidden>
+    </form>
+    <a href="" class="profile-detail-bttn" id="showDetail" hidden></a>
+</div>
+<!-- main wrapper -->
+
+<div class="model-bg"></div>
+
+
+<!-- SCRIPTS -->
+<script src="/js/plugin.js"></script>
+<script src="/js/main.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/code.js"></script>
+<script src="/js/chat.js"></script>
+<!--	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="f_chat:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41185187-308f-488a-a26e-a9aa78e026d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generatorConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/f_chat/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/f_chat/entity/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/f_chat/entity/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/f_chat/interceptor/LoginInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/add.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/demo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/user-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MBGTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/f_chat/FChatApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/dbconfig.properties" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven_house" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2BYUrCwvLHS1eqZfQnZWOsCTz8F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\soft-project\F_Chat" />
+      <recent name="D:\soft-project\F_Chat\src\main\resources\templates" />
+      <recent name="D:\soft-project\F_Chat\src\main\resources\static" />
+      <recent name="D:\soft-project\F_Chat\src\test\resources" />
+      <recent name="D:\soft-project\F_Chat\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.f_chat.controller" />
+      <recent name="com.example.f_chat.entity" />
+      <recent name="com.example.f_chat.util" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\29743\Desktop\F_Chat" />
+      <recent name="D:\soft-project\F_Chat\src\main\resources\mapper" />
+      <recent name="D:\soft-project\F_Chat\src\main\java\com\example\f_chat\entity" />
+      <recent name="D:\soft-project\F_Chat\src\main\java\com\example\f_chat\dao" />
+      <recent name="D:\soft-project\F_Chat\target\classes\static\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FChatApplication">
+    <configuration name="MBGTest.testMBG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="f_chat" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MBGTest" />
+      <option name="METHOD_NAME" value="testMBG" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FChatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="f_chat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.f_chat.FChatApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MBGTest.testMBG" />
+      <item itemvalue="Spring Boot.FChatApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MBGTest.testMBG" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41185187-308f-488a-a26e-a9aa78e026d3" name="Default Changelist" comment="" />
+      <created>1657082709106</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657082709106</updated>
+      <workItem from="1657082710411" duration="7271000" />
+      <workItem from="1657115861111" duration="10255000" />
+      <workItem from="1657247825282" duration="5564000" />
+      <workItem from="1657584715202" duration="6564000" />
+      <workItem from="1658029990456" duration="2693000" />
+      <workItem from="1658105944183" duration="7126000" />
+      <workItem from="1658371333299" duration="12083000" />
+      <workItem from="1659103571874" duration="32020000" />
+      <workItem from="1659236909235" duration="7005000" />
+      <workItem from="1659328930363" duration="15676000" />
+      <workItem from="1659422396024" duration="26899000" />
+      <workItem from="1659699505996" duration="24227000" />
+      <workItem from="1660038334152" duration="2413000" />
+      <workItem from="1660042258901" duration="2854000" />
+      <workItem from="1660101995942" duration="2626000" />
+      <workItem from="1660218868530" duration="3737000" />
+      <workItem from="1660311878411" duration="7426000" />
+      <workItem from="1660388755294" duration="7755000" />
+      <workItem from="1660478782814" duration="5036000" />
+      <workItem from="1660585271647" duration="4476000" />
+      <workItem from="1660805175650" duration="6646000" />
+      <workItem from="1660874374700" duration="37379000" />
+      <workItem from="1661171059890" duration="25203000" />
+      <workItem from="1661284615403" duration="47640000" />
+      <workItem from="1661472081456" duration="5441000" />
+      <workItem from="1661613777228" duration="6857000" />
+      <workItem from="1661819147542" duration="1785000" />
+    </task>
+    <task id="LOCAL-00001" summary="0823">
+      <created>1661268122127</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661268122127</updated>
+    </task>
+    <task id="LOCAL-00002" summary="0824">
+      <created>1661302365076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661302365076</updated>
+    </task>
+    <task id="LOCAL-00003" summary="0825">
+      <created>1661403061352</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661403061352</updated>
+    </task>
+    <task id="LOCAL-00004" summary="0825">
+      <created>1661412108290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661412108290</updated>
+    </task>
+    <task id="LOCAL-00005" summary="0825">
+      <created>1661440693914</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661440693914</updated>
+    </task>
+    <task id="LOCAL-00006" summary="0826">
+      <created>1661510972316</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661510972316</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0823" />
+    <MESSAGE value="0824" />
+    <MESSAGE value="0825" />
+    <MESSAGE value="0826" />
+    <option name="LAST_COMMIT_MESSAGE" value="0826" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1657248495426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1657248495426" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1661473006071">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1661473006071" />
+    <state x="499" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1661293528321">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1661293528321" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1657111771799">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1657111771799" />
+    <state x="499" y="167" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1657111365329">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1536.824@0.0.1536.824" timestamp="1657111365329" />
+    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1661510970047">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1661510970047" />
+    <state width="425" height="466" key="DebuggerActiveHint" timestamp="1661260914734">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="425" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1661260914734" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1661269055979">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1661269055979" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1659152663089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1659152663089" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1661819194427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661819194427" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1661819194427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661819194427" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1661819194426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661819194426" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1661819194427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661819194427" />
+    <state width="1493" height="183" key="GridCell.Tab.1.bottom" timestamp="1661801744766">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661801744766" />
+    <state width="1493" height="183" key="GridCell.Tab.1.center" timestamp="1661801744766">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1661801744766" />
+    <state width="1493" height="183" key="GridCell.Tab.1.left" timestamp="1661801744766">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1661801744766" />
+    <state width="1493" height="183" key="GridCell.Tab.1.right" timestamp="1661801744766">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1661801744766" />
+    <state width="1493" height="303" key="GridCell.Tab.2.bottom" timestamp="1661269151886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661269151886" />
+    <state width="1493" height="303" key="GridCell.Tab.2.center" timestamp="1661269151886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1661269151886" />
+    <state width="1493" height="303" key="GridCell.Tab.2.left" timestamp="1661269151886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1661269151886" />
+    <state width="1493" height="303" key="GridCell.Tab.2.right" timestamp="1661269151886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1661269151886" />
+    <state x="349" y="74" key="Registry" timestamp="1657248510568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="74" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1657248510568" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1661295064916">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1661295064916" />
+    <state x="361" y="134" key="Vcs.Push.Dialog.v2" timestamp="1661510974960">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="134" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1661510974960" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1661613784079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1661613784079" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1661346313993">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1661346313993" />
+  </component>
+</project>
